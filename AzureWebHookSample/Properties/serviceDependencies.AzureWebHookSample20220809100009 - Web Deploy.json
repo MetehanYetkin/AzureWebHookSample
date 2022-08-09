@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/AzureWebHookSample20220809100009-apim/apis/AzureWebHookSample",
+      "type": "apis.azure"
+    }
+  }
+}
