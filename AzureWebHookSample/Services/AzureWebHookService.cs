@@ -16,7 +16,7 @@ namespace AzureWebHookSample.Services
             var email = new MimeMessage();
 
 
-            email.From.Add(MailboxAddress.Parse("bilgi@task4team.com"));
+            email.From.Add(MailboxAddress.Parse("FromAdress"));
 
 
             email.To.Add(MailboxAddress.Parse("metehanyetkin12@gmail.com"));
@@ -35,8 +35,8 @@ namespace AzureWebHookSample.Services
             {
                 using (var smtpClient = new SmtpClient())
                 {
-                    smtpClient.Connect("mail.bb.com.tr", 366, SecureSocketOptions.None);
-                    smtpClient.Authenticate("bilgi@task4team.com", "Dg82v021v2020");
+                    smtpClient.Connect("mailServer", 366, SecureSocketOptions.None);
+                    smtpClient.Authenticate("Username", "password");
                     smtpClient.Send(email);
                     smtpClient.Disconnect(true);
                 }
@@ -56,7 +56,7 @@ namespace AzureWebHookSample.Services
             var email = new MimeMessage();
             var textBody = request.Resource.workItemId.ToString();
 
-            email.From.Add(MailboxAddress.Parse("bilgi@task4team.com"));
+            email.From.Add(MailboxAddress.Parse("FromAdress"));
 
 
             email.To.Add(MailboxAddress.Parse("metehanyetkin12@gmail.com"));
@@ -75,8 +75,8 @@ namespace AzureWebHookSample.Services
             {
                 using (var smtpClient = new SmtpClient())
                 {
-                    smtpClient.Connect("mail.bb.com.tr", 366, SecureSocketOptions.None);
-                    smtpClient.Authenticate("bilgi@task4team.com", "Dg82v021v2020");
+                    smtpClient.Connect("mailServer", 366, SecureSocketOptions.None);
+                    smtpClient.Authenticate("Username", "password");
                     smtpClient.Send(email);
                     smtpClient.Disconnect(true);
                 }
