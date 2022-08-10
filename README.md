@@ -1,3 +1,8 @@
+
+![images](https://user-images.githubusercontent.com/45935701/183991312-d7f5f8f1-037c-46f5-b96f-0548e63ede11.png)
+
+
+
 # Bir AzureDevOps ortamına  WebHook nasıl tanımlanır  ?
 
 
