@@ -24,6 +24,7 @@ Bir Azure Boards da oluşturulan WorkItem üzerinde gerçekleştirilen her deği
 sistemin haberdar olması ve bu değişiklik bilgisini işleyerek sistemin bir başka yerinde kullanılması 
 gerekiyor ise burada Azure üzerinden tanımlanacak olan bir WebHook en etkili çözümlerden birisi 
 olacaktır . 
+Web Hook'umuzun çalıştığını görmek için basit bir Mail Gönderme olayını kod üzerinden gerçekleştirdim . 
 
  ![image](https://user-images.githubusercontent.com/45935701/183987926-4f410961-01de-435e-99d6-5d71792f33fb.png) 
                                                      Şekil 1.0
