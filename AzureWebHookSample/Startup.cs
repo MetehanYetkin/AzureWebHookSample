@@ -1,4 +1,7 @@
+using AzureWebHookSample.Attributes;
 using AzureWebHookSample.Services;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +32,12 @@ namespace AzureWebHookSample
         {
 
             services.AddControllers();
+            services.AddAuthentication().AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", options => { });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("BasicAuthentication", new AuthorizationPolicyBuilder("BasicAuthentication").RequireAuthenticatedUser().Build());
+            });
+
             services.AddSingleton<IAzureWebHookService, AzureWebHookService>();
             services.AddSwaggerGen(c =>
             {

@@ -1,4 +1,5 @@
-﻿using AzureWebHookSample.Modals;
+﻿using AzureWebHookSample.Attributes;
+using AzureWebHookSample.Modals;
 using AzureWebHookSample.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,7 @@ namespace AzureWebHookSample.Controllers
             _azureWebHookService = azureWebHookService;
         }
 
+        [BasicAutherize]
         [HttpPost]
         public IActionResult AzureWebHookSampleNoModal([FromBody] JsonElement jsonElement)
         {
@@ -28,6 +30,7 @@ namespace AzureWebHookSample.Controllers
             return Ok(response);
 
         }
+
         [HttpPost("AzureWebHookSampleWithModal")]
         public IActionResult AzureWebHookSampleWithModal([FromBody] AzureResponseModals content)
         {
